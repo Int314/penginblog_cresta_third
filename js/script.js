@@ -11,23 +11,29 @@ $(function () {
     fvBgHeight = $(".fv").outerHeight();
 
     //サイトロゴ
-    $siteTitle = $('.site-title');
-    if ($(window).scrollTop() < kvImgHeight - ($siteTitle.outerHeight() + $siteTitle.position().top)) {
+    $siteTitle = $(".site-title");
+    if (
+      $(window).scrollTop() <
+      kvImgHeight - ($siteTitle.outerHeight() + $siteTitle.position().top)
+    ) {
       //メインビジュアル内
-      $siteTitle.removeClass('black');
+      $siteTitle.removeClass("black");
     } else {
       //メインビジュアルより下までスクロールされた
-      $siteTitle.addClass('black');
+      $siteTitle.addClass("black");
     }
 
     //バーガーボタン
-    $burgerBtn = $('.burger-btn');
-    if ($(window).scrollTop() < fvBgHeight - ($burgerBtn.outerHeight() + $burgerBtn.position().top)) {
+    $burgerBtn = $(".burger-btn");
+    if (
+      $(window).scrollTop() <
+      fvBgHeight - ($burgerBtn.outerHeight() + $burgerBtn.position().top)
+    ) {
       //メインビジュアル内
-      $burgerBtn.removeClass('black');
+      $burgerBtn.removeClass("black");
     } else {
       //メインビジュアルより下までスクロールされた
-      $burgerBtn.addClass('black');
+      $burgerBtn.addClass("black");
     }
   });
 
@@ -37,8 +43,11 @@ $(function () {
     $(".header-nav").toggleClass("open");
     $(".burger-musk").fadeToggle(300);
     $("body").toggleClass("noscroll");
-    if ($(window).scrollTop() > fvBgHeight - ($burgerBtn.outerHeight() + $burgerBtn.position().top)) {
-      $(this).toggleClass('black');
+    if (
+      $(window).scrollTop() >
+      fvBgHeight - ($burgerBtn.outerHeight() + $burgerBtn.position().top)
+    ) {
+      $(this).toggleClass("black");
     }
   });
 });
